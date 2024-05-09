@@ -33,8 +33,10 @@ constexpr static int LIN_RX_ON = 4;
 // constexpr static int PREAMBLE_IND = 3;
 
 // Data to send (example)
-static const uint8_t sequence0[SEQUENCE_LENGTH] = {1,0,1,0,1,1,1,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0}; //{0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0};
-static const uint8_t sequence1[SEQUENCE_LENGTH] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+// static const uint8_t sequence0[SEQUENCE_LENGTH] = {1,0,1,0,1,1,1,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0}; //{0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0};
+// static const uint8_t sequence1[SEQUENCE_LENGTH] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+static const uint8_t sequence0[SEQUENCE_LENGTH] = {1,0,1,0,1,1,1,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,1,0,1,1,0,1,1,0,1,1,0,1,0,1,0,1,1,0};//case 2
+static const uint8_t sequence1[SEQUENCE_LENGTH] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1};//case 2
 static const uint8_t sequence2[SEQUENCE_LENGTH] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 // Board configuration
@@ -100,7 +102,7 @@ const int arraySizes[NUM_ARRAYS] = {16, 6, 3, 1, 1, 1, 4, 1, 3, 1, 4, 2, 1, 1, 1
 bool* arrays[NUM_ARRAYS] = {MEM_DATA_DIAG, MEM_ADDR_DIAG, MEM_SEL_DIAG, MEM_DIAG_MODE, UNCONNECTED_1, EXT_2M_CLK_EN, MC_Debug_addr, BYPASS_RF, SENS_CODE_DIAG, ADC_DIAG_MODE, DIG_MUX_SEL, PLL_OUT_EN, OSC_CONTROL_diag, calibration_control_diag, PRECODE_CTRL, CRC_PRECODE, CRC_DIAG_MODE, CDR_TRIM, IEB1, IEB2, UNCONNECTED, Analog_Diag_Ctrl, RF_TRIM, RF_DIAG_MODE, TX_EN_diag, morb_trans_diag, rforbase_diag, pll_enable_diag};
 
 //<<<<<Aligning>>>>>><MEM_DATA_DIAG>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <MEM_ADDR_DIAG>> <MEM_SEL> <M_EN><N><EXT> <MC_DEG_A><RFB><SEN_CO><ADC><DIG_MUX_S><PLL_O><OSC><CAL><P><<<CRC_PRECODE>>>>>><CD><CDR_T><IE12><<<NC_NC_NC_6>>>><AD><RF_TRIM>>>>>>>>>>>>>>>>>>>>><RD><TX><MOB><ROB><PL_EN>
-bool send_data[80] = {0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,    1,  0,  0, 0, 0, 0,  1, 0, 0, 0, 1,  0, 0, 1, 1, 0, 0, 1,   1,   0, 1, 1, 1, 1, 1, 1, 1, 1, 0,  1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1,  1,    1,   1};
+bool send_data[80] = {0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,    1,  0,  0, 0, 0, 0,  1, 0, 0, 0, 1,  0, 0, 1, 1, 0, 0, 1,   1,   0, 1, 1, 1, 1, 1, 1, 1, 0, 0,  1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1,  1,    1,   1};
 
 //
 
